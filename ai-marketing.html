@@ -410,45 +410,29 @@
   .aiat-top{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; padding-bottom:24px; border-bottom:1px solid #e3ddc9; margin-bottom:24px;}
   .aiat-top .label{font-size:0.95rem; color:#5a5648;}
   .aiat-top .label b{display:block; color:var(--navy); font-size:1.15rem; font-weight:800;}
+  .aiat-top .aiat-logo{height:56px; width:auto; display:block; flex-shrink:0;}
   .aiat-values{display:grid; grid-template-columns:repeat(3,1fr); gap:20px; text-align:center;}
   .aiat-values .val-icon{font-size:1.8rem; margin-bottom:10px;}
   .aiat-values p{font-size:0.88rem; color:#3a372e; font-weight:600; line-height:1.5;}
 
-  /* ---------- REGISTER v2 with QR ---------- */
+  /* ---------- REGISTER ---------- */
   .register-v2{
-    background:linear-gradient(100deg,var(--navy) 45%, var(--amber) 45%);
+    background:var(--navy);
     color:#fff; padding:0; overflow:hidden;
   }
   .register-inner{
-    display:grid; grid-template-columns:1.3fr 1fr; align-items:center;
-    padding:50px 6vw; gap:32px;
+    padding:50px 6vw;
   }
   .register-v2 .kicker{color:var(--amber-soft);}
   .register-v2 h2{font-size:clamp(1.6rem,2.8vw,2.1rem); font-weight:800; margin-bottom:10px;}
   .register-v2 .sub{font-size:0.95rem; color:rgba(255,255,255,0.8); margin-bottom:4px;}
   .register-v2 .btn-primary{margin-top:18px;}
-  .qr-box{
-    background:#fff; border-radius:16px; padding:20px; display:flex; align-items:center; gap:18px;
-    justify-self:end;
-  }
-  .qr-box .qr-placeholder{
-    width:110px; height:110px; flex-shrink:0; border-radius:8px;
-    background:
-      repeating-conic-gradient(var(--navy) 0% 25%, #fff 0% 50%) 0 0/16px 16px;
-    border:6px solid #fff; outline:2px solid var(--navy);
-  }
-  .qr-box .txt{color:var(--navy);}
-  .qr-box .txt b{display:block; font-size:1rem; margin-bottom:4px;}
-  .qr-box .txt span{font-size:0.82rem; color:#5a5648;}
 
   @media (max-width:760px){
     .infobar{grid-template-columns:1fr;}
     .events-wrap{grid-template-columns:1fr;}
     .track-row{flex-direction:column; align-items:flex-start; gap:8px;}
     .track-num{width:auto;}
-    .register-inner{grid-template-columns:1fr;}
-    .register-v2{background:var(--navy);}
-    .qr-box{justify-self:start;}
   }
 </style>
 </head>
@@ -578,7 +562,9 @@
   <div class="aiat-strip">
     <div class="aiat-top">
       <div class="label">ออกแบบหลักสูตรและทีมผู้สอนโดย<b>สมาคม AIAT</b></div>
-      <div style="font-family:'IBM Plex Mono',monospace; font-weight:800; color:var(--navy); font-size:1.1rem; letter-spacing:0.05em;">AIAT — ARTIFICIAL INTELLIGENCE ASSOCIATION OF THAILAND</div>
+      <a href="https://aiat.or.th/" target="_blank" rel="noopener noreferrer">
+        <img class="aiat-logo" src="images/aiat-logo.png" alt="Artificial Intelligence Association of Thailand (AIAT)">
+      </a>
     </div>
     <div class="aiat-values">
       <div><div class="val-icon">🎯</div><p>พัฒนาทักษะที่ตลาดต้องการ</p></div>
@@ -787,13 +773,6 @@
         สมัครเรียนคลิก →
       </a>
     </div>
-    <div class="qr-box">
-      <div class="qr-placeholder" aria-hidden="true"></div>
-      <div class="txt">
-        <b>สแกนเพื่อสมัคร</b>
-        <span>หรือดูรายละเอียดเพิ่มเติม</span>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -806,7 +785,6 @@
   <div class="col">
     <div>📞 065-4158248, 065-5498879</div>
     <div>✉️ contact@tycnpro.dev</div>
-    <div>ออกแบบโดย สมาคม AiAT</div>
   </div>
 </footer>
 

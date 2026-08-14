@@ -124,11 +124,7 @@
     aspect-ratio:1/1;
     display:flex; align-items:center; justify-content:center;
   }
-  .signature svg{width:100%; height:100%;}
-  .node{fill:var(--amber);}
-  .node.b{fill:var(--mint);}
-  .node.c{fill:var(--coral);}
-  .link{stroke:rgba(255,255,255,0.28); stroke-width:1;}
+  .signature img{width:100%; height:100%; object-fit:contain; display:block;}
 
   /* ---------- TRACKS ---------- */
   .section{padding:70px 6vw;}
@@ -417,45 +413,29 @@
   .aiat-top{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; padding-bottom:24px; border-bottom:1px solid #e3ddc9; margin-bottom:24px;}
   .aiat-top .label{font-size:0.95rem; color:#5a5648;}
   .aiat-top .label b{display:block; color:var(--navy); font-size:1.15rem; font-weight:800;}
+  .aiat-top .aiat-logo{height:56px; width:auto; display:block; flex-shrink:0;}
   .aiat-values{display:grid; grid-template-columns:repeat(3,1fr); gap:20px; text-align:center;}
   .aiat-values .val-icon{font-size:1.8rem; margin-bottom:10px;}
   .aiat-values p{font-size:0.88rem; color:#3a372e; font-weight:600; line-height:1.5;}
 
-  /* ---------- REGISTER v2 with QR ---------- */
+  /* ---------- REGISTER ---------- */
   .register-v2{
-    background:linear-gradient(100deg,var(--navy) 45%, var(--amber) 45%);
+    background:var(--navy);
     color:#fff; padding:0; overflow:hidden;
   }
   .register-inner{
-    display:grid; grid-template-columns:1fr; align-items:center;
-    padding:50px 6vw; gap:32px;
+    padding:50px 6vw;
   }
   .register-v2 .kicker{color:var(--amber-soft);}
   .register-v2 h2{font-size:clamp(1.6rem,2.8vw,2.1rem); font-weight:800; margin-bottom:10px;}
   .register-v2 .sub{font-size:0.95rem; color:rgba(255,255,255,0.8); margin-bottom:4px;}
   .register-v2 .btn-primary{margin-top:18px;}
-  .qr-box{
-    background:#fff; border-radius:16px; padding:20px; display:flex; align-items:center; gap:18px;
-    justify-self:end;
-  }
-  .qr-box .qr-placeholder{
-    width:110px; height:110px; flex-shrink:0; border-radius:8px;
-    background:
-      repeating-conic-gradient(var(--navy) 0% 25%, #fff 0% 50%) 0 0/16px 16px;
-    border:6px solid #fff; outline:2px solid var(--navy);
-  }
-  .qr-box .txt{color:var(--navy);}
-  .qr-box .txt b{display:block; font-size:1rem; margin-bottom:4px;}
-  .qr-box .txt span{font-size:0.82rem; color:#5a5648;}
 
   @media (max-width:760px){
     .infobar{grid-template-columns:1fr;}
     .events-wrap{grid-template-columns:1fr;}
     .track-row{flex-direction:column; align-items:flex-start; gap:8px;}
     .track-num{width:auto;}
-    .register-inner{grid-template-columns:1fr;}
-    .register-v2{background:var(--navy);}
-    .qr-box{justify-self:start;}
   }
 
   /* ---------- CLASS CALENDAR ---------- */
@@ -526,40 +506,7 @@
     </div>
 
     <div class="signature">
-      <svg viewBox="0 0 400 400" fill="none">
-        <circle cx="200" cy="190" r="150" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
-        <circle cx="200" cy="190" r="115" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1" stroke-dasharray="3 6"/>
-        <!-- head outline -->
-        <path d="M140,120 C140,70 175,45 210,48 C255,52 280,90 278,135 C277,160 265,175 260,195 C258,215 262,235 255,255 L160,255 C155,235 158,215 150,195 C142,175 140,150 140,120 Z"
-              fill="rgba(255,255,255,0.06)" stroke="var(--mint)" stroke-width="2.5"/>
-        <!-- gear -->
-        <g fill="var(--amber-soft)" opacity="0.9">
-          <circle cx="222" cy="120" r="16"/>
-          <circle cx="222" cy="120" r="6" fill="var(--navy)"/>
-        </g>
-        <!-- AI chip -->
-        <rect x="168" y="238" width="64" height="46" rx="6" fill="var(--amber)"/>
-        <text x="200" y="270" fill="var(--navy-deep)" font-family="IBM Plex Mono" font-size="22" font-weight="800" text-anchor="middle">AI</text>
-        <!-- ladder figure left -->
-        <line x1="130" y1="290" x2="170" y2="180" stroke="rgba(255,255,255,0.4)" stroke-width="3"/>
-        <line x1="140" y1="290" x2="180" y2="180" stroke="rgba(255,255,255,0.4)" stroke-width="3"/>
-        <line x1="132" y1="270" x2="178" y2="255" stroke="rgba(255,255,255,0.4)" stroke-width="2"/>
-        <line x1="135" y1="245" x2="181" y2="230" stroke="rgba(255,255,255,0.4)" stroke-width="2"/>
-        <circle cx="150" cy="200" r="9" fill="var(--coral)"/>
-        <!-- magnifier figure right -->
-        <circle cx="280" cy="150" r="10" fill="none" stroke="var(--mint)" stroke-width="3"/>
-        <line x1="287" y1="157" x2="298" y2="168" stroke="var(--mint)" stroke-width="3"/>
-        <circle cx="255" cy="205" r="9" fill="var(--mint)"/>
-        <!-- circuit accents -->
-        <g stroke="rgba(255,255,255,0.35)" stroke-width="1.5" fill="none">
-          <path d="M60,70 h50 l15,-15 h30"/>
-          <path d="M330,90 h-40 l-12,12"/>
-          <path d="M60,300 h40 l14,14"/>
-        </g>
-        <circle class="node" cx="60" cy="70" r="5"/>
-        <circle class="node b" cx="330" cy="90" r="5"/>
-        <circle class="node c" cx="60" cy="300" r="5"/>
-      </svg>
+      <img src="images/ai-developer-hero.png" alt="AI Developer">
     </div>
   </div>
 </section>
@@ -633,8 +580,10 @@
 
   <div class="aiat-strip">
     <div class="aiat-top">
-      <div class="label">ออกแบบหลักสูตรและทีมผู้สอนโดย<b>สมาคม AIAT</b></div>
-      <div style="font-family:'IBM Plex Mono',monospace; font-weight:800; color:var(--navy); font-size:1.1rem; letter-spacing:0.05em;">AIAT — ARTIFICIAL INTELLIGENCE ASSOCIATION OF THAILAND</div>
+      <div class="label">ออกแบบหลักสูตรและทีมผู้สอนโดย<b>สมาคมปัญญาประดิษฐ์ประเทศไทย (AIAT)</b></div>
+      <a href="https://aiat.or.th/" target="_blank" rel="noopener noreferrer">
+        <img class="aiat-logo" src="images/aiat-logo.png" alt="Artificial Intelligence Association of Thailand (AIAT)">
+      </a>
     </div>
     <div class="aiat-values">
       <div><div class="val-icon"><i class="fa-solid fa-bullseye"></i></div><p>พัฒนาทักษะที่ตลาดต้องการ</p></div>
@@ -989,7 +938,6 @@
   <div class="col">
     <div><i class="fa-solid fa-phone"></i> 065-4158248, 065-5498879</div>
     <div><i class="fa-solid fa-envelope"></i> contact@tycnpro.dev</div>
-    <div>ออกแบบโดย สมาคม AiAT</div>
   </div>
 </footer>
 

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AI Developer Track | โครงการพัฒนากำลังคนด้านปัญญาประดิษฐ์</title>
+<title>โครงการพัฒนากำลังคนด้านปัญญาประดิษฐ์ | AI Developer &amp; AI Marketing</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -402,6 +402,37 @@
   .track-pill h3{color:var(--amber-soft); font-size:1.05rem; font-weight:700; margin-bottom:2px;}
   .track-pill p{color:rgba(255,255,255,0.8); font-size:0.85rem; line-height:1.5;}
 
+  /* ---------- GATEWAY CARDS ---------- */
+  .gateway{display:grid; grid-template-columns:1fr 1fr; gap:22px;}
+  .gateway-card{
+    display:flex; flex-direction:column;
+    background:#fff; border:1px solid #e3ddc9; border-radius:18px;
+    padding:28px 28px 24px; text-decoration:none; color:inherit;
+    transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  }
+  .gateway-card:hover{
+    transform:translateY(-4px);
+    border-color:var(--amber);
+    box-shadow:0 16px 34px -16px rgba(13,27,76,0.35);
+  }
+  .gateway-card .g-tag{
+    font-family:'IBM Plex Mono',monospace; font-size:0.72rem; letter-spacing:0.12em;
+    text-transform:uppercase; color:var(--amber); margin-bottom:12px;
+  }
+  .gateway-card h3{font-size:1.35rem; font-weight:800; color:var(--navy); margin-bottom:10px;}
+  .gateway-card p{font-size:0.92rem; color:#5a5648; line-height:1.7; margin-bottom:16px; flex:1;}
+  .gateway-card ul{list-style:none; display:flex; flex-direction:column; gap:8px; margin-bottom:22px;}
+  .gateway-card ul li{font-size:0.88rem; color:#3a372e; padding-left:16px; position:relative;}
+  .gateway-card ul li::before{content:"—"; position:absolute; left:0; color:var(--coral);}
+  .gateway-card .g-go{
+    display:inline-flex; align-items:center; gap:8px;
+    font-weight:700; color:var(--navy);
+  }
+  .gateway-card:hover .g-go{color:var(--amber);}
+  @media (max-width:760px){
+    .gateway{grid-template-columns:1fr;}
+  }
+
   /* ---------- AIAT partnership strip ---------- */
   .aiat-strip{
     background:#fff; border:1px solid #e3ddc9; border-radius:18px;
@@ -410,45 +441,29 @@
   .aiat-top{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; padding-bottom:24px; border-bottom:1px solid #e3ddc9; margin-bottom:24px;}
   .aiat-top .label{font-size:0.95rem; color:#5a5648;}
   .aiat-top .label b{display:block; color:var(--navy); font-size:1.15rem; font-weight:800;}
+  .aiat-top .aiat-logo{height:56px; width:auto; display:block; flex-shrink:0;}
   .aiat-values{display:grid; grid-template-columns:repeat(3,1fr); gap:20px; text-align:center;}
   .aiat-values .val-icon{font-size:1.8rem; margin-bottom:10px;}
   .aiat-values p{font-size:0.88rem; color:#3a372e; font-weight:600; line-height:1.5;}
 
-  /* ---------- REGISTER v2 with QR ---------- */
+  /* ---------- REGISTER ---------- */
   .register-v2{
-    background:linear-gradient(100deg,var(--navy) 45%, var(--amber) 45%);
+    background:var(--navy);
     color:#fff; padding:0; overflow:hidden;
   }
   .register-inner{
-    display:grid; grid-template-columns:1.3fr 1fr; align-items:center;
-    padding:50px 6vw; gap:32px;
+    padding:50px 6vw;
   }
   .register-v2 .kicker{color:var(--amber-soft);}
   .register-v2 h2{font-size:clamp(1.6rem,2.8vw,2.1rem); font-weight:800; margin-bottom:10px;}
   .register-v2 .sub{font-size:0.95rem; color:rgba(255,255,255,0.8); margin-bottom:4px;}
   .register-v2 .btn-primary{margin-top:18px;}
-  .qr-box{
-    background:#fff; border-radius:16px; padding:20px; display:flex; align-items:center; gap:18px;
-    justify-self:end;
-  }
-  .qr-box .qr-placeholder{
-    width:110px; height:110px; flex-shrink:0; border-radius:8px;
-    background:
-      repeating-conic-gradient(var(--navy) 0% 25%, #fff 0% 50%) 0 0/16px 16px;
-    border:6px solid #fff; outline:2px solid var(--navy);
-  }
-  .qr-box .txt{color:var(--navy);}
-  .qr-box .txt b{display:block; font-size:1rem; margin-bottom:4px;}
-  .qr-box .txt span{font-size:0.82rem; color:#5a5648;}
 
   @media (max-width:760px){
     .infobar{grid-template-columns:1fr;}
     .events-wrap{grid-template-columns:1fr;}
     .track-row{flex-direction:column; align-items:flex-start; gap:8px;}
     .track-num{width:auto;}
-    .register-inner{grid-template-columns:1fr;}
-    .register-v2{background:var(--navy);}
-    .qr-box{justify-self:start;}
   }
 </style>
 </head>
@@ -458,22 +473,20 @@
   <div class="logos">
     <span>PMU-B</span><span>CMU</span><span>CAMT</span><span>DLL</span><span>DITC</span>
     <span style="margin-left:auto; opacity:0.5;">ออกแบบโดย สมาคม AiAT</span>
-    <a href="ai-marketing.html" style="color:var(--amber-soft); text-decoration:none; border:1px solid var(--line); padding:6px 14px; border-radius:100px; font-family:'IBM Plex Mono',monospace; font-size:0.72rem;">สาย Marketing →</a>
   </div>
 
   <div class="hero-grid">
     <div>
-      <div class="eyebrow">AI Developer Track · เปิดรับสมัครแล้ววันนี้</div>
-      <h1>พัฒนากำลังคนสาย<br><span class="accent">AI Developer</span></h1>
+      <div class="eyebrow">เปิดรับสมัครแล้ววันนี้ · 2 สายการเรียนรู้</div>
+      <h1 style="font-weight:600; font-size:clamp(1.5rem,2.6vw,2rem); margin-bottom:2px;">โครงการ</h1>
+      <h1>พัฒนากำลังคนด้าน<br><span class="accent">ปัญญาประดิษฐ์</span></h1>
       <p class="hero-sub">
         หลักสูตรบูรณาการร่วมภาคอุตสาหกรรม ผ่านแพลตฟอร์มการเรียนรู้ยืดหยุ่นตลอดชีวิต
-        AI Entrepreneurship Curriculum สำหรับนักพัฒนาซอฟต์แวร์และผู้นำทีม Dev สาย IT
+        AI Entrepreneurship Curriculum สำหรับสาย IT Developer และ Digital Marketing
       </p>
       <div class="hero-cta">
-        <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSc3-MZvEeWD0tDkmPyx9K5VR8dCAzjK3cwzMsK2wqrkh-Kyzw/viewform" target="_blank" rel="noopener">
-          สมัครเรียนตอนนี้ →
-        </a>
-        <a class="btn btn-ghost" href="#tracks">ดูรายละเอียดหลักสูตร</a>
+        <a class="btn btn-primary" href="ai-developer.html">สาย AI Developer →</a>
+        <a class="btn btn-ghost" href="ai-marketing.html">สาย AI Marketing →</a>
       </div>
       <div class="hero-meta">
         <div><b>17 ส.ค. 2026</b>ปิดรับสมัคร</div>
@@ -549,36 +562,38 @@
 
 <section class="section" id="tracks">
   <div class="section-head">
-    <span class="kicker">Curriculum · AI Developer</span>
-    <h2>2 เส้นทางการเรียนรู้สำหรับสาย Developer</h2>
+    <span class="kicker">Choose your track</span>
+    <h2>เลือกสายที่ตรงกับงานของคุณ</h2>
   </div>
-  <div class="tracks-v2">
-    <div class="track-row">
-      <span class="track-num">01</span>
-      <div class="track-pill">
-        <span class="picon">&lt;/&gt;</span>
-        <div>
-          <h3>AI Developer Trainer</h3>
-          <p>นักพัฒนาที่ต้องการสร้าง AI-enabled software</p>
-        </div>
-      </div>
-    </div>
-    <div class="track-row">
-      <span class="track-num">02</span>
-      <div class="track-pill">
-        <span class="picon">🧠</span>
-        <div>
-          <h3>AI Developer Learner</h3>
-          <p>ผู้พัฒนา Dev ที่วาง architecture และ mentoring</p>
-        </div>
-      </div>
-    </div>
+  <div class="gateway">
+    <a class="gateway-card" href="ai-developer.html">
+      <span class="g-tag">Track 01</span>
+      <h3>AI Developer</h3>
+      <p>สำหรับนักพัฒนาซอฟต์แวร์และผู้นำทีม Dev ที่อยากสร้าง AI-enabled software และวาง architecture ในองค์กร</p>
+      <ul>
+        <li>AI Developer Learner — สร้างซอฟต์แวร์ที่ใช้ AI ได้จริง</li>
+        <li>AI Developer Trainer — วาง architecture และ mentoring ทีม</li>
+      </ul>
+      <span class="g-go">ดูรายละเอียดหลักสูตร →</span>
+    </a>
+    <a class="gateway-card" href="ai-marketing.html">
+      <span class="g-tag">Track 02</span>
+      <h3>AI Marketing</h3>
+      <p>สำหรับนักการตลาดและผู้นำทีม Digital Marketing ที่อยากใช้ AI สร้าง campaign วัดผล และวางกลยุทธ์</p>
+      <ul>
+        <li>AI Marketing Learner — สร้าง campaign และ dashboard</li>
+        <li>AI Marketing Trainer — กลยุทธ์ AI marketing และ governance</li>
+      </ul>
+      <span class="g-go">ดูรายละเอียดหลักสูตร →</span>
+    </a>
   </div>
 
   <div class="aiat-strip">
     <div class="aiat-top">
       <div class="label">ออกแบบหลักสูตรและทีมผู้สอนโดย<b>สมาคม AIAT</b></div>
-      <div style="font-family:'IBM Plex Mono',monospace; font-weight:800; color:var(--navy); font-size:1.1rem; letter-spacing:0.05em;">AIAT — ARTIFICIAL INTELLIGENCE ASSOCIATION OF THAILAND</div>
+      <a href="https://aiat.or.th/" target="_blank" rel="noopener noreferrer">
+        <img class="aiat-logo" src="images/aiat-logo.png" alt="Artificial Intelligence Association of Thailand (AIAT)">
+      </a>
     </div>
     <div class="aiat-values">
       <div><div class="val-icon">🎯</div><p>พัฒนาทักษะที่ตลาดต้องการ</p></div>
@@ -586,77 +601,6 @@
       <div><div class="val-icon">🤝</div><p>เชื่อมต่อเครือข่ายผู้เชี่ยวชาญ</p></div>
     </div>
   </div>
-</section>
-
-<section class="section curriculum">
-  <div class="section-head">
-    <span class="kicker">Curriculum Detail · Phase 1</span>
-    <h2>เนื้อหาการเรียนรู้รายชั่วโมง แยกตามเส้นทาง</h2>
-  </div>
-
-  <div class="curric-block theme-core">
-    <div class="curric-head">
-      <div class="curric-badge">AI</div>
-      <div>
-        <h3>Core AI Foundation — 12 ชั่วโมง</h3>
-        <p>พื้นฐานร่วมของทุกเส้นทาง เรียนก่อนแยกสาย</p>
-      </div>
-    </div>
-    <table class="curric-table">
-      <thead><tr><th>Session</th><th>ชั่วโมง</th><th>กิจกรรม</th><th></th></tr></thead>
-      <tbody>
-        <tr><td>F1: AI/GenAI for Business</td><td>2</td><td>วิเคราะห์ตัวอย่าง use case จาก IT/Marketing</td><td><span class="mode-pill">Online Lecture</span></td></tr>
-        <tr><td>F2: Prompt & Workflow Thinking</td><td>2</td><td>ปรับ prompt จากคำถามทั่วไปเป็น prompt เชิงงาน</td><td><span class="mode-pill">Online Lecture</span></td></tr>
-        <tr><td>F3: Data, RAG, Model, Agent</td><td>2</td><td>เลือก approach ให้เหมาะกับ use case</td><td><span class="mode-pill">Online Lecture</span></td></tr>
-        <tr><td>F4: Evaluation & Measurement</td><td>2</td><td>สร้าง baseline metric และ success criteria</td><td><span class="mode-pill">Online Lecture</span></td></tr>
-        <tr><td>F5: Privacy, PDPA, Copyright, Security</td><td>2</td><td>classify risk ของ use case บริษัท</td><td><span class="mode-pill">Online Lecture</span></td></tr>
-        <tr><td>F6: Capstone Framing</td><td>2</td><td>เขียน problem statement และ stakeholder map</td><td><span class="mode-pill">Online Lecture</span></td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="curric-block theme-dl">
-    <div class="curric-head">
-      <div class="curric-badge">DL</div>
-      <div>
-        <h3>Software Development Learner</h3>
-        <p>นักพัฒนาที่ต้องการสร้าง AI-enabled software</p>
-      </div>
-    </div>
-    <table class="curric-table">
-      <thead><tr><th>Session</th><th>ชั่วโมง</th><th>กิจกรรม</th><th></th></tr></thead>
-      <tbody>
-        <tr><td>DL1: AI Coding Assistant for SDLC</td><td>4</td><td>prompt สำหรับ coding, unit test generation, code review, bug fixing</td><td><span class="mode-pill">Online</span></td></tr>
-        <tr><td>DL2: LLM API Basics</td><td>4</td><td>REST API, JSON schema, error handling, prompt template</td><td><span class="mode-pill">Online</span></td></tr>
-        <tr><td>DL3: RAG Pipeline</td><td>6</td><td>document parsing, chunking, embedding, retrieval, citation, evaluation</td><td><span class="mode-pill">Online</span></td></tr>
-        <tr><td>DL4: OCR/Vision/NLP Use Case Lab</td><td>4</td><td>OCR form extraction, YOLO defect detection, text classification</td><td><span class="mode-pill">Online</span></td></tr>
-        <tr><td>DL5: AI Agent & Automation</td><td>4</td><td>tool calling, API integration, guardrail, human approval</td><td><span class="mode-pill">Online</span></td></tr>
-        <tr><td>DL6: Deployment & Monitoring Lite</td><td>4</td><td>container, simple API, logging, latency/cost tracking</td><td><span class="mode-pill">Online</span></td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="curric-block theme-dt">
-    <div class="curric-head">
-      <div class="curric-badge">DT</div>
-      <div>
-        <h3>Software Development Trainer</h3>
-        <p>ผู้นำทีม Dev ที่วาง architecture และ mentoring</p>
-      </div>
-    </div>
-    <table class="curric-table">
-      <thead><tr><th>Session</th><th>ชั่วโมง</th><th>กิจกรรม</th><th></th></tr></thead>
-      <tbody>
-        <tr><td>DT1: Enterprise AI Architecture</td><td>4</td><td>API-based vs self-hosted, cloud/on-prem, gateway, logging</td><td><span class="mode-pill">Online</span></td></tr>
-        <tr><td>DT2: Model/Tool Evaluation</td><td>6</td><td>accuracy, latency, cost, privacy, license, vendor risk</td><td><span class="mode-pill">Online</span></td></tr>
-        <tr><td>DT3: Advanced RAG & Agent Review</td><td>4</td><td>eval set, hallucination test, prompt injection, observability</td><td><span class="mode-pill">Online</span></td></tr>
-        <tr><td>DT4: Secure AI SDLC</td><td>4</td><td>secret handling, source code policy, audit log, data classification</td><td><span class="mode-pill">Online</span></td></tr>
-        <tr><td>DT5: Troubleshooting Clinic</td><td>4</td><td>diagnose latency, retrieval quality, API error, deployment issue</td><td><span class="mode-pill">Online</span></td></tr>
-        <tr><td>DT6: Coaching & Facilitation</td><td>4</td><td>adult learning, feedback, mentoring, review meeting</td><td><span class="mode-pill">Online</span></td></tr>
-      </tbody>
-    </table>
-  </div>
-
 </section>
 
 <section class="section phases">
@@ -788,13 +732,6 @@
         สมัครเรียนคลิก →
       </a>
     </div>
-    <div class="qr-box">
-      <div class="qr-placeholder" aria-hidden="true"></div>
-      <div class="txt">
-        <b>สแกนเพื่อสมัคร</b>
-        <span>หรือดูรายละเอียดเพิ่มเติม</span>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -807,7 +744,7 @@
   <div class="col">
     <div>📞 065-4158248, 065-5498879</div>
     <div>✉️ contact@tycnpro.dev</div>
-    <div>ออกแบบโดย สมาคม AiAT</div>
+    <div><a href="ai-developer.html" style="color:var(--amber-soft); text-decoration:none;">AI Developer</a> · <a href="ai-marketing.html" style="color:var(--amber-soft); text-decoration:none;">AI Marketing</a></div>
   </div>
 </footer>
 
