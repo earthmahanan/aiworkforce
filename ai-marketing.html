@@ -6,19 +6,20 @@
 <title>AI Marketing Track | โครงการพัฒนากำลังคนด้านปัญญาประดิษฐ์</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
   :root{
-    --navy-deep:#0a1230;
-    --navy:#0d1b4c;
-    --navy-light:#16296b;
-    --circuit:#2a3f8f;
-    --amber:#f5821f;
-    --amber-soft:#ffb15c;
-    --coral:#ff6a5c;
-    --paper:#f4f0e6;
-    --ink:#0a1230;
-    --mint:#5ee6c8;
-    --line: rgba(255,255,255,0.12);
+    --navy-deep:#3a1f0c;
+    --navy:#5a2d10;
+    --navy-light:#7a3d16;
+    --circuit:#c45e18;
+    --amber:#c45e18;
+    --amber-soft:#e0894a;
+    --coral:#b45414;
+    --paper:#f7f0e6;
+    --ink:#3a1f0c;
+    --mint:#f0c48a;
+    --line: rgba(255,255,255,0.16);
   }
   *{box-sizing:border-box;margin:0;padding:0;}
   html{scroll-behavior:smooth;}
@@ -34,34 +35,32 @@
   .hero{
     position:relative;
     background:
-      radial-gradient(ellipse at 90% 0%, rgba(245,130,31,0.16), transparent 42%),
-      linear-gradient(180deg,var(--navy-deep) 0%, var(--navy) 70%);
+      radial-gradient(ellipse at 88% 42%, rgba(255,255,255,0.22), transparent 42%),
+      linear-gradient(180deg, #ff8c2a 0%, #f37021 42%, #ffd7b0 78%, #fff 100%);
     color:#fff;
-    padding:20px 6vw 70px;
+    padding:20px 6vw 110px;
     overflow:hidden;
   }
   .hero::before{
     content:"";
     position:absolute; inset:0;
     background-image:
-      linear-gradient(var(--line) 1px, transparent 1px),
-      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+      linear-gradient(rgba(255,255,255,0.12) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.12) 1px, transparent 1px);
     background-size:64px 64px;
-    opacity:0.35;
+    opacity:0.22;
     mask-image:linear-gradient(180deg, black, transparent 85%);
     pointer-events:none;
   }
   .logos{
     position:relative;
     display:flex; align-items:center; gap:18px; flex-wrap:wrap;
-    font-size:0.78rem; color:rgba(255,255,255,0.55);
+    font-size:0.78rem; color:rgba(255,255,255,0.85);
     padding-bottom:26px; margin-bottom:34px;
-    border-bottom:1px solid var(--line);
+    border-bottom:1px solid rgba(255,255,255,0.28);
   }
-  .logos span{
-    padding:5px 12px; border:1px solid var(--line); border-radius:100px;
-    font-family:'IBM Plex Mono',monospace; letter-spacing:0.08em;
-  }
+  .logos img{height:34px; width:auto; display:block;}
+  .logos a:has(img){display:flex; align-items:center; text-decoration:none;}
   .hero-grid{
     position:relative;
     display:grid;
@@ -73,9 +72,9 @@
     display:inline-flex; align-items:center; gap:10px;
     font-family:'IBM Plex Mono',monospace;
     font-size:0.75rem; letter-spacing:0.18em; text-transform:uppercase;
-    color:var(--mint); margin-bottom:20px;
+    color:rgba(255,255,255,0.92); margin-bottom:20px;
   }
-  .eyebrow::before{content:"●"; color:var(--coral); animation:pulse 2s infinite;}
+  .eyebrow::before{content:"●"; color:#3a1f0c; animation:pulse 2s infinite;}
   @keyframes pulse{0%,100%{opacity:1;} 50%{opacity:0.25;}}
   h1{
     font-size:clamp(2.1rem, 4.4vw, 3.6rem);
@@ -83,14 +82,14 @@
     line-height:1.12;
     margin-bottom:18px;
   }
-  h1 .accent{
-    color:var(--amber);
-    background:linear-gradient(90deg,var(--amber-soft),var(--amber));
-    -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;
+  .hero h1 .accent{
+    color:#3a1f0c;
+    background:none;
+    -webkit-text-fill-color:#3a1f0c;
   }
   .hero-sub{
     font-size:1.05rem; line-height:1.75;
-    color:rgba(255,255,255,0.78);
+    color:rgba(255,255,255,0.92);
     max-width:52ch; margin-bottom:32px;
   }
   .hero-cta{display:flex; gap:14px; flex-wrap:wrap; align-items:center;}
@@ -107,27 +106,38 @@
     box-shadow:0 10px 30px -8px rgba(245,166,35,0.55);
   }
   .btn-primary:hover{transform:translateY(-2px); box-shadow:0 14px 34px -6px rgba(245,166,35,0.65);}
-  .btn-ghost{
-    color:#fff; border:1px solid var(--line); background:rgba(255,255,255,0.04);
+  .hero .btn-primary{
+    background:#3a1f0c;
+    color:#fff;
+    box-shadow:0 10px 30px -8px rgba(58,31,12,0.45);
   }
-  .btn-ghost:hover{background:rgba(255,255,255,0.09);}
+  .hero .btn-primary:hover{transform:translateY(-2px); box-shadow:0 14px 34px -6px rgba(58,31,12,0.55);}
+  .btn-ghost{
+    color:#fff; border:1px solid rgba(255,255,255,0.45); background:rgba(255,255,255,0.08);
+  }
+  .btn-ghost:hover{background:rgba(255,255,255,0.16);}
   .hero-meta{
     display:flex; gap:26px; margin-top:34px; flex-wrap:wrap;
   }
-  .hero-meta div{font-family:'IBM Plex Mono',monospace; font-size:0.75rem; color:rgba(255,255,255,0.5);}
-  .hero-meta b{display:block; font-family:'Prompt',sans-serif; font-size:1.1rem; color:#fff; font-weight:600;}
+  .hero-meta div{font-family:'IBM Plex Mono',monospace; font-size:0.75rem; color:#5a2d10;}
+  .hero-meta b{display:block; font-family:'Prompt',sans-serif; font-size:1.1rem; color:#3a1f0c; font-weight:700;}
 
-  /* signature: neural sketch */
   .signature{
     position:relative;
-    aspect-ratio:1/1;
     display:flex; align-items:center; justify-content:center;
   }
-  .signature svg{width:100%; height:100%;}
-  .node{fill:var(--amber);}
-  .node.b{fill:var(--mint);}
-  .node.c{fill:var(--coral);}
-  .link{stroke:rgba(255,255,255,0.28); stroke-width:1;}
+  .signature::before{
+    content:"";
+    position:absolute;
+    width:92%; aspect-ratio:1/1;
+    border-radius:50%;
+    border:2px solid rgba(255,255,255,0.28);
+    box-shadow:
+      0 0 0 18px rgba(255,255,255,0.08),
+      0 0 0 42px rgba(173,216,255,0.12);
+    pointer-events:none;
+  }
+  .signature img{position:relative; width:100%; height:auto; display:block;}
 
   /* ---------- TRACKS ---------- */
   .section{padding:70px 6vw;}
@@ -351,12 +361,15 @@
     width:38px; height:38px; border-radius:10px; background:var(--amber);
     display:flex; align-items:center; justify-content:center; font-size:1.1rem; flex-shrink:0;
   }
-  .outcome-card h3{font-size:1.15rem; font-weight:700; color:var(--navy);}
+  .outcome-card h3{font-size:1.5rem; font-weight:800; color:var(--amber);}
   .outcome-card ul{list-style:none; display:flex; flex-direction:column; gap:9px;}
   .outcome-card ul li{
-    font-size:0.9rem; line-height:1.6; padding-left:18px; position:relative; color:#3a372e;
+    font-size:0.95rem; line-height:1.6; padding-left:20px; position:relative; color:var(--amber); font-weight:600;
   }
   .outcome-card ul li::before{content:"•"; position:absolute; left:0; color:var(--amber); font-weight:700;}
+  .outcome-card .note{margin-top:16px; padding-top:14px; border-top:1px solid #eee;}
+  .outcome-card .note b{display:block; font-size:0.82rem; color:#3a372e; margin-bottom:4px;}
+  .outcome-card .note p{font-size:0.76rem; line-height:1.6; color:#7a7568; font-weight:400;}
 
   .events-wrap{display:grid; grid-template-columns:0.9fr 2fr; gap:20px;}
   .events-label{
@@ -434,15 +447,53 @@
     .track-row{flex-direction:column; align-items:flex-start; gap:8px;}
     .track-num{width:auto;}
   }
+
+  /* ---------- CLASS CALENDAR ---------- */
+  .calendar-wrap{display:flex; flex-direction:column; gap:44px;}
+  .cal-card{background:#fff; border:1px solid #e3ddc9; border-radius:16px; overflow:hidden;}
+  .cal-title{
+    display:flex; align-items:center; gap:14px;
+    padding:20px 24px; border-bottom:2px solid var(--navy);
+  }
+  .cal-title h3{font-size:1.3rem; font-weight:800; color:var(--navy);}
+  .cal-title .bar{height:14px; flex:1; max-width:220px; background:var(--amber); border-radius:3px;}
+  .cal-grid{width:100%; border-collapse:collapse;}
+  .cal-grid th{
+    font-size:0.8rem; font-weight:700; padding:10px 6px; text-align:center;
+    border:1px solid #e3ddc9; background:#faf8f3; color:#3a372e;
+  }
+  .cal-grid th.sat{color:#2255cc;}
+  .cal-grid th.sun{color:#cc3333;}
+  .cal-grid td{
+    border:1px solid #e3ddc9; vertical-align:top; height:78px; width:14.28%;
+    padding:6px 8px; font-size:0.72rem; color:#3a372e;
+  }
+  .cal-grid td .daynum{font-weight:800; font-size:0.95rem; margin-bottom:4px; display:block;}
+  .cal-grid td.muted .daynum{color:#c9c2ae;}
+  .cal-grid td.sat .daynum{color:#2255cc;}
+  .cal-grid td.sun .daynum{color:#cc3333;}
+  .cal-grid td.has-class{background:#fff7ec;}
+  .cal-event{
+    display:block; font-weight:700; color:var(--navy); line-height:1.3; margin-bottom:2px;
+  }
+  .cal-event-time{display:block; color:#5a5648; font-size:0.68rem;}
+  .cal-legend{display:flex; gap:18px; flex-wrap:wrap; padding:16px 24px; border-top:1px solid #e3ddc9; font-size:0.8rem; color:#5a5648;}
+  .cal-legend span{display:inline-flex; align-items:center; gap:6px;}
+  .cal-legend i{width:12px; height:12px; border-radius:3px; background:#fff7ec; border:1px solid var(--amber); display:inline-block;}
+
+  @media (max-width:760px){
+    .cal-grid{font-size:0.6rem;}
+    .cal-grid td{height:62px; padding:4px;}
+    .cal-grid th{padding:6px 2px; font-size:0.65rem;}
+  }
 </style>
 </head>
 <body>
 
 <section class="hero">
   <div class="logos">
-    <span>PMU-B</span><span>CMU</span><span>CAMT</span><span>DLL</span><span>DITC</span>
-    <span style="margin-left:auto; opacity:0.5;">ออกแบบโดย สมาคม AiAT</span>
-    <a href="ai-developer.html" style="color:var(--amber-soft); text-decoration:none; border:1px solid var(--line); padding:6px 14px; border-radius:100px; font-family:'IBM Plex Mono',monospace; font-size:0.72rem;">สาย Developer →</a>
+    <a href="index.html"><img src="images/partner-logos.png" alt="PMU-B, CMU, CAMT, DLL, DITC, AiAT"></a>
+    <a href="ai-developer.html" style="margin-left:auto; color:#fff; text-decoration:none; border:1px solid rgba(255,255,255,0.45); padding:6px 14px; border-radius:100px; font-family:'IBM Plex Mono',monospace; font-size:0.72rem;">สาย Developer <i class="fa-solid fa-arrow-right"></i></a>
   </div>
 
   <div class="hero-grid">
@@ -455,7 +506,7 @@
       </p>
       <div class="hero-cta">
         <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSc3-MZvEeWD0tDkmPyx9K5VR8dCAzjK3cwzMsK2wqrkh-Kyzw/viewform" target="_blank" rel="noopener">
-          สมัครเรียนตอนนี้ →
+          สมัครเรียนตอนนี้ <i class="fa-solid fa-arrow-right"></i>
         </a>
         <a class="btn btn-ghost" href="#tracks">ดูรายละเอียดหลักสูตร</a>
       </div>
@@ -467,30 +518,7 @@
     </div>
 
     <div class="signature">
-      <svg viewBox="0 0 400 400" fill="none">
-        <g class="link">
-          <line x1="80" y1="90" x2="200" y2="60"/>
-          <line x1="80" y1="90" x2="200" y2="180"/>
-          <line x1="80" y1="220" x2="200" y2="180"/>
-          <line x1="80" y1="220" x2="200" y2="320"/>
-          <line x1="80" y1="90" x2="80" y2="220"/>
-          <line x1="200" y1="60" x2="320" y2="120"/>
-          <line x1="200" y1="180" x2="320" y2="120"/>
-          <line x1="200" y1="180" x2="320" y2="240"/>
-          <line x1="200" y1="320" x2="320" y2="240"/>
-          <line x1="200" y1="60" x2="200" y2="180"/>
-          <line x1="200" y1="180" x2="200" y2="320"/>
-          <line x1="320" y1="120" x2="320" y2="240"/>
-        </g>
-        <circle class="node" cx="80" cy="90" r="7"/>
-        <circle class="node b" cx="80" cy="220" r="7"/>
-        <circle class="node c" cx="200" cy="60" r="9"/>
-        <circle class="node" cx="200" cy="180" r="10"/>
-        <circle class="node b" cx="200" cy="320" r="9"/>
-        <circle class="node c" cx="320" cy="120" r="7"/>
-        <circle class="node" cx="320" cy="240" r="7"/>
-        <text x="200" y="185" fill="#0a1230" font-family="IBM Plex Mono" font-size="10" text-anchor="middle" font-weight="700">AI</text>
-      </svg>
+      <img src="images/ai-marketing-hero.png" alt="ผู้เรียนสาย AI Marketing">
     </div>
   </div>
 </section>
@@ -498,21 +526,24 @@
 <section class="infobar">
   <div class="outcome-card">
     <div class="head">
-      <span class="icon">🏅</span>
-      <h3>OUTCOME</h3>
+      <span class="icon"><i class="fa-solid fa-medal"></i></span>
+      <h3>Benefit</h3>
     </div>
     <ul>
-      <li>ความรู้พื้นฐาน AI</li>
-      <li>ทักษะเฉพาะสายงานที่ตรงกับงานของตัวเอง</li>
-      <li>ผลงานต้นแบบ prototype/campaign ที่จับต้องได้</li>
-      <li>ประสบการณ์นำไปใช้จริง 6 เดือนในที่ทำงาน พร้อมผู้เชี่ยวชาญประเมินเป็นระยะ</li>
+      <li>โอกาสนำเสนองานกับนักลงทุนต่างชาติ</li>
+      <li>ค่าลงทะเบียนคืนกลับเป็นค่าตอบแทนระหว่างเรียนได้เต็มจำนวน</li>
+      <li>ค่าลงทะเบียนสามารถนำไปลดหย่อนภาษีได้ถึง 2 เท่า!</li>
     </ul>
+    <div class="note">
+      <b>หมายเหตุ:</b>
+      <p>นิติบุคคลบริจาคเพื่อสนับสนุนการศึกษาสามารถนำไปลดหย่อนภาษีได้ 2 เท่าของเงินที่บริจาค หักรายจ่ายได้ 2 เท่า แต่ต้องไม่เกิน 10% ของกำไรสุทธิก่อนหักรายจ่ายเพื่อการกุศลสาธารณะหรือเพื่อสาธารณประโยชน์ และรายจ่ายเพื่อการศึกษาหรือการกีฬา</p>
+    </div>
   </div>
   <div class="events-wrap">
-    <div class="events-label"><span>💡</span>EXCLUSIVE<br>EVENTS</div>
+    <div class="events-label"><span><i class="fa-solid fa-lightbulb"></i></span>EXCLUSIVE<br>EVENTS</div>
     <div class="events-list">
       <div class="event-row hackathon">
-        <div class="emoji">🏆</div>
+        <div class="emoji"><i class="fa-solid fa-trophy"></i></div>
         <div>
           <span class="name">Hackathon Event</span>
           <div class="desc">จัดแข่งไอเดีย สร้างสรรค์นวัตกรรม โดยทีมผู้เข้าอบรม และวิทยากรชื่อดัง</div>
@@ -520,7 +551,7 @@
         <div class="when">FEB 2027<br><b>14</b>Hours</div>
       </div>
       <div class="event-row buildathon">
-        <div class="emoji">🚩</div>
+        <div class="emoji"><i class="fa-solid fa-flag-checkered"></i></div>
         <div>
           <span class="name">Buildathon</span>
           <div class="desc">พาผู้เข้าร่วมงานแข่งขันระดับโลก กับ Digital nomad ทั่วโลกในงาน Nomad summit</div>
@@ -540,7 +571,7 @@
     <div class="track-row">
       <span class="track-num">01</span>
       <div class="track-pill">
-        <span class="picon">📣</span>
+        <span class="picon"><i class="fa-solid fa-bullhorn"></i></span>
         <div>
           <h3>AI Marketing Learner</h3>
           <p>นักการตลาดที่สร้าง campaign และ dashboard</p>
@@ -550,7 +581,7 @@
     <div class="track-row">
       <span class="track-num">02</span>
       <div class="track-pill">
-        <span class="picon">📈</span>
+        <span class="picon"><i class="fa-solid fa-chart-line"></i></span>
         <div>
           <h3>AI Marketing Trainer</h3>
           <p>ผู้นำทีมกลยุทธ์ AI marketing และ governance</p>
@@ -561,15 +592,15 @@
 
   <div class="aiat-strip">
     <div class="aiat-top">
-      <div class="label">ออกแบบหลักสูตรและทีมผู้สอนโดย<b>สมาคม AIAT</b></div>
+      <div class="label">ออกแบบหลักสูตรและทีมผู้สอนโดย<b>สมาคมปัญญาประดิษฐ์ประเทศไทย (AIAT)</b></div>
       <a href="https://aiat.or.th/" target="_blank" rel="noopener noreferrer">
         <img class="aiat-logo" src="images/aiat-logo.png" alt="Artificial Intelligence Association of Thailand (AIAT)">
       </a>
     </div>
     <div class="aiat-values">
-      <div><div class="val-icon">🎯</div><p>พัฒนาทักษะที่ตลาดต้องการ</p></div>
-      <div><div class="val-icon">📈</div><p>ต่อยอดธุรกิจและอาชีพ</p></div>
-      <div><div class="val-icon">🤝</div><p>เชื่อมต่อเครือข่ายผู้เชี่ยวชาญ</p></div>
+      <div><div class="val-icon"><i class="fa-solid fa-bullseye"></i></div><p>พัฒนาทักษะที่ตลาดต้องการ</p></div>
+      <div><div class="val-icon"><i class="fa-solid fa-chart-line"></i></div><p>ต่อยอดธุรกิจและอาชีพ</p></div>
+      <div><div class="val-icon"><i class="fa-solid fa-handshake"></i></div><p>เชื่อมต่อเครือข่ายผู้เชี่ยวชาญ</p></div>
     </div>
   </div>
 </section>
@@ -644,6 +675,139 @@
   </div>
 </section>
 
+<section class="section" id="calendar">
+  <div class="section-head">
+    <span class="kicker">Class Schedule · Phase 1</span>
+    <h2>ตารางเรียน สิงหาคม – กันยายน 2026</h2>
+  </div>
+  <div class="calendar-wrap">
+
+    <div class="cal-card">
+      <div class="cal-title"><h3>August 2026</h3><div class="bar"></div></div>
+      <table class="cal-grid">
+        <thead><tr><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th><th class="sat">Saturday</th><th class="sun">Sunday</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="muted"><span class="daynum">27</span></td>
+            <td class="muted"><span class="daynum">28</span></td>
+            <td class="muted"><span class="daynum">29</span></td>
+            <td class="muted"><span class="daynum">30</span></td>
+            <td class="muted"><span class="daynum">31</span></td>
+            <td class="sat"><span class="daynum">1</span></td>
+            <td class="sun"><span class="daynum">2</span></td>
+          </tr>
+          <tr>
+            <td><span class="daynum">3</span></td>
+            <td><span class="daynum">4</span></td>
+            <td><span class="daynum">5</span></td>
+            <td><span class="daynum">6</span></td>
+            <td><span class="daynum">7</span></td>
+            <td class="sat"><span class="daynum">8</span></td>
+            <td class="sun"><span class="daynum">9</span></td>
+          </tr>
+          <tr>
+            <td><span class="daynum">10</span></td>
+            <td><span class="daynum">11</span></td>
+            <td><span class="daynum">12</span></td>
+            <td><span class="daynum">13</span></td>
+            <td><span class="daynum">14</span></td>
+            <td class="sat"><span class="daynum">15</span></td>
+            <td class="sun"><span class="daynum">16</span></td>
+          </tr>
+          <tr>
+            <td><span class="daynum">17</span></td>
+            <td><span class="daynum">18</span></td>
+            <td><span class="daynum">19</span></td>
+            <td><span class="daynum">20</span></td>
+            <td><span class="daynum">21</span></td>
+            <td class="sat has-class"><span class="daynum">22</span><span class="cal-event">Core AI Foundation</span><span class="cal-event-time">13.00–16.00 (3hr.)</span></td>
+            <td class="sun has-class"><span class="daynum">23</span><span class="cal-event">Core AI Foundation</span><span class="cal-event-time">13.00–16.00 (3hr.)</span></td>
+          </tr>
+          <tr>
+            <td><span class="daynum">24</span></td>
+            <td><span class="daynum">25</span></td>
+            <td><span class="daynum">26</span></td>
+            <td><span class="daynum">27</span></td>
+            <td><span class="daynum">28</span></td>
+            <td class="sat has-class"><span class="daynum">29</span><span class="cal-event">Core AI Foundation</span><span class="cal-event-time">13.00–16.00 (3hr.)</span></td>
+            <td class="sun has-class"><span class="daynum">30</span><span class="cal-event">Core AI Foundation</span><span class="cal-event-time">13.00–16.00 (3hr.)</span></td>
+          </tr>
+          <tr>
+            <td><span class="daynum">31</span></td>
+            <td class="muted"><span class="daynum">1</span></td>
+            <td class="muted"><span class="daynum">2</span></td>
+            <td class="muted"><span class="daynum">3</span></td>
+            <td class="muted"><span class="daynum">4</span></td>
+            <td class="sat muted"><span class="daynum">5</span></td>
+            <td class="sun muted"><span class="daynum">6</span></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="cal-legend"><span><i></i> วัน Core AI Foundation (12 ชม. รวม)</span></div>
+    </div>
+
+    <div class="cal-card">
+      <div class="cal-title"><h3>September 2026</h3><div class="bar" style="background:var(--navy);"></div></div>
+      <table class="cal-grid">
+        <thead><tr><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th><th class="sat">Saturday</th><th class="sun">Sunday</th></tr></thead>
+        <tbody>
+          <tr>
+            <td class="muted"><span class="daynum">31</span></td>
+            <td><span class="daynum">1</span></td>
+            <td class="has-class"><span class="daynum">2</span><span class="cal-event">Track-specific Lecture</span><span class="cal-event-time">18.00–21.00 (3hr.)</span></td>
+            <td class="has-class"><span class="daynum">3</span><span class="cal-event">Track-specific Lecture</span><span class="cal-event-time">18.00–21.00 (3hr.)</span></td>
+            <td><span class="daynum">4</span></td>
+            <td class="sat has-class"><span class="daynum">5</span><span class="cal-event">Track-specific Guided lab</span><span class="cal-event-time">13.00–17.00 (4hr.)</span></td>
+            <td class="sun has-class"><span class="daynum">6</span><span class="cal-event">Track-specific Guided lab</span><span class="cal-event-time">13.00–17.00 (4hr.)</span></td>
+          </tr>
+          <tr>
+            <td><span class="daynum">7</span></td>
+            <td><span class="daynum">8</span></td>
+            <td class="has-class"><span class="daynum">9</span><span class="cal-event">Track-specific Lecture</span><span class="cal-event-time">18.00–21.00 (3hr.)</span></td>
+            <td class="has-class"><span class="daynum">10</span><span class="cal-event">Track-specific Lecture</span><span class="cal-event-time">18.00–21.00 (3hr.)</span></td>
+            <td><span class="daynum">11</span></td>
+            <td class="sat has-class"><span class="daynum">12</span><span class="cal-event">Track-specific Guided lab</span><span class="cal-event-time">13.00–17.00 (4hr.)</span></td>
+            <td class="sun has-class"><span class="daynum">13</span><span class="cal-event">Track-specific Guided lab</span><span class="cal-event-time">13.00–17.00 (4hr.)</span></td>
+          </tr>
+          <tr>
+            <td><span class="daynum">14</span></td>
+            <td><span class="daynum">15</span></td>
+            <td><span class="daynum">16</span></td>
+            <td><span class="daynum">17</span></td>
+            <td><span class="daynum">18</span></td>
+            <td class="sat has-class"><span class="daynum">19</span><span class="cal-event">Track-specific mini Workshop</span><span class="cal-event-time">09.00–12.00 (3hr.)</span></td>
+            <td class="sun has-class"><span class="daynum">20</span><span class="cal-event">Track-specific mini Workshop</span><span class="cal-event-time">09.00–12.00 (3hr.)</span></td>
+          </tr>
+          <tr>
+            <td><span class="daynum">21</span></td>
+            <td><span class="daynum">22</span></td>
+            <td><span class="daynum">23</span></td>
+            <td><span class="daynum">24</span></td>
+            <td><span class="daynum">25</span></td>
+            <td class="sat"><span class="daynum">26</span></td>
+            <td class="sun"><span class="daynum">27</span></td>
+          </tr>
+          <tr>
+            <td><span class="daynum">28</span></td>
+            <td><span class="daynum">29</span></td>
+            <td><span class="daynum">30</span></td>
+            <td class="muted"><span class="daynum">1</span></td>
+            <td class="muted"><span class="daynum">2</span></td>
+            <td class="sat muted"><span class="daynum">3</span></td>
+            <td class="sun muted"><span class="daynum">4</span></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="cal-legend">
+        <span><i></i> Track-specific Lecture (12 ชม. รวม)</span>
+        <span><i></i> Track-specific Guided Lab (16 ชม. รวม)</span>
+        <span><i></i> Mini Workshop (6 ชม. รวม)</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <section class="section phases">
   <div class="section-head">
     <span class="kicker">Roadmap</span>
@@ -683,14 +847,14 @@
   <div class="hackathon-strip">
     <div class="event-card">
       <div>
-        <div class="label">🏆 Hackathon Event</div>
+        <div class="label"><i class="fa-solid fa-trophy"></i> Hackathon Event</div>
         <div class="desc">จับคู่ไอเดีย สร้างสรรค์นวัตกรรม โดยทีมผู้เชี่ยวชาญ และวิทยากรชื่อดัง</div>
       </div>
       <div class="when">FEB 2027<br>14 ชม.</div>
     </div>
     <div class="event-card">
       <div>
-        <div class="label">🚀 Buildathon</div>
+        <div class="label"><i class="fa-solid fa-rocket"></i> Buildathon</div>
         <div class="desc">พบผู้ประกอบการแนวหน้าดิจิทัล ร่วมงาน Nomad Summit ระดับโลก</div>
       </div>
       <div class="when">JAN 2027</div>
@@ -701,7 +865,7 @@
 <section class="section">
   <div class="split">
     <div>
-      <h3>🏅 ผลลัพธ์ที่ผู้เรียนจะได้รับ</h3>
+      <h3><i class="fa-solid fa-medal"></i> ผลลัพธ์ที่ผู้เรียนจะได้รับ</h3>
       <ul>
         <li>ความรู้พื้นฐาน AI ที่ใช้งานได้จริง</li>
         <li>ทักษะเฉพาะสายงานที่ตรงกับบทบาทของตัวเอง</li>
@@ -710,21 +874,13 @@
       </ul>
     </div>
     <div>
-      <h3>📋 กำหนดการสมัคร</h3>
+      <h3><i class="fa-solid fa-clipboard-list"></i> กำหนดการสมัคร</h3>
       <ul>
         <li>ปิดรับสมัคร: <strong>17 สิงหาคม 2026</strong></li>
         <li>เริ่มเรียน Phase 1: <strong>22 สิงหาคม 2026</strong></li>
         <li>เริ่ม Phase 2 (ทำงานจริง): <strong>20 กันยายน 2026</strong></li>
         <li>Hackathon: <strong>กุมภาพันธ์ 2027</strong></li>
       </ul>
-    </div>
-  </div>
-
-  <div class="tax-banner">
-    <div class="tag">x2</div>
-    <div>
-      <h3>ลดหย่อนภาษีได้ถึง 2 เท่า สำหรับบริษัทที่สนับสนุนการเรียน</h3>
-      <p>นิติบุคคลหักรายจ่ายได้ 2 เท่า แต่ต้องไม่เกิน 10% ของกำไรสุทธิ ก่อนหักรายจ่ายเพื่อการกุศลสาธารณะหรือเพื่อสาธารณประโยชน์ และรายจ่ายเพื่อการศึกษาหรือการกีฬา</p>
     </div>
   </div>
 </section>
@@ -744,22 +900,30 @@
     </thead>
     <tbody>
       <tr>
-        <td>👥 1 – 30 คนแรก</td>
+        <td><i class="fa-solid fa-users"></i> 1 – 30 คนแรก</td>
         <td>21,000 บาท</td>
         <td class="badge-yes">✓ รับค่าตอบแทน 3,500 บาท/เดือน (รวม 21,000 บาท)</td>
       </tr>
       <tr>
-        <td>👥 31 – 50 คนถัดไป</td>
+        <td><i class="fa-solid fa-users"></i> 31 – 50 คนถัดไป</td>
         <td>21,000 บาท</td>
         <td class="badge-yes">✓ รับค่าตอบแทน 1,750 บาท/เดือน (รวม 10,500 บาท)</td>
       </tr>
       <tr>
-        <td>👥 51 คนขึ้นไป</td>
+        <td><i class="fa-solid fa-users"></i> 51 คนขึ้นไป</td>
         <td>15,000 บาท</td>
         <td class="badge-no">✗ ไม่มีค่าตอบแทนระหว่างทำงาน 6 เดือน</td>
       </tr>
     </tbody>
   </table>
+
+  <div class="tax-banner">
+    <div class="tag">x2</div>
+    <div>
+      <h3>ลดหย่อนภาษีได้ถึง 2 เท่า สำหรับบริษัทที่สนับสนุนการเรียน</h3>
+      <p>นิติบุคคลหักรายจ่ายได้ 2 เท่า แต่ต้องไม่เกิน 10% ของกำไรสุทธิ ก่อนหักรายจ่ายเพื่อการกุศลสาธารณะหรือเพื่อสาธารณประโยชน์ และรายจ่ายเพื่อการศึกษาหรือการกีฬา</p>
+    </div>
+  </div>
 </section>
 
 <section class="register-v2">
@@ -770,7 +934,7 @@
       <div class="sub">เริ่มเรียนสิงหาคม 2026 · ปิดรับสมัคร 17 สิงหาคม 2026</div>
       <div class="sub">ที่นั่งจำกัด — 30 คนแรกได้รับค่าตอบแทนสูงสุด 3,500 บาท/เดือน</div>
       <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSc3-MZvEeWD0tDkmPyx9K5VR8dCAzjK3cwzMsK2wqrkh-Kyzw/viewform" target="_blank" rel="noopener">
-        สมัครเรียนคลิก →
+        สมัครเรียนคลิก <i class="fa-solid fa-arrow-right"></i>
       </a>
     </div>
   </div>
@@ -783,8 +947,8 @@
     <div>239 ถ.ห้วยแก้ว อ.เมือง จ.เชียงใหม่ 50200</div>
   </div>
   <div class="col">
-    <div>📞 065-4158248, 065-5498879</div>
-    <div>✉️ contact@tycnpro.dev</div>
+    <div><i class="fa-solid fa-phone"></i> 065-4158248, 065-5498879</div>
+    <div><i class="fa-solid fa-envelope"></i> contact@tycnpro.dev</div>
   </div>
 </footer>
 
