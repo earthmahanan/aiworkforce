@@ -339,9 +339,44 @@
   .theme-mt .curric-table thead th{background:#a9bacb;}
   .theme-mt .curric-table{box-shadow:0 0 0 2px #8a6fd6;}
 
-  @media (max-width:700px){
-    .curric-table{font-size:0.78rem;}
-    .curric-table thead th, .curric-table tbody td{padding:10px 12px;}
+  @media (max-width:760px){
+    .curric-head{
+      max-width:100%;
+      border-radius:16px;
+      padding:12px 14px 12px 10px;
+      gap:12px;
+    }
+    .curric-head h3{font-size:0.95rem; line-height:1.35;}
+    .curric-head p{font-size:0.78rem;}
+    .curric-table thead{display:none;}
+    .curric-table, .curric-table tbody{display:block; width:100%;}
+    .curric-table tbody tr{
+      display:block;
+      padding:14px 16px;
+      border-bottom:1px solid var(--line);
+    }
+    .curric-table tbody td{
+      display:block;
+      width:100% !important;
+      padding:0 0 8px;
+      border:none;
+      text-align:left;
+      white-space:normal;
+    }
+    .curric-table tbody td:first-child{white-space:normal; padding-bottom:6px;}
+    .curric-table tbody td:nth-child(2){
+      text-align:left;
+      color:var(--amber-soft);
+      padding-bottom:8px;
+    }
+    .curric-table tbody td:nth-child(2)::before{
+      content:"ชั่วโมง ";
+      font-family:'Prompt',sans-serif;
+      color:rgba(255,255,255,0.5);
+      font-weight:400;
+    }
+    .curric-table tbody td:nth-child(3){color:rgba(255,255,255,0.8);}
+    .curric-table tbody td:nth-child(4){padding-bottom:0; padding-top:4px;}
   }
 
   /* ---------- OUTCOME + EXCLUSIVE EVENTS BAR ---------- */
@@ -446,6 +481,14 @@
     .events-wrap{grid-template-columns:1fr;}
     .track-row{flex-direction:column; align-items:flex-start; gap:8px;}
     .track-num{width:auto;}
+    .section{padding:48px 18px;}
+    .hero{padding:16px 18px 48px;}
+    .logos img{height:26px; max-width:min(58vw, 240px);}
+    .aiat-values{grid-template-columns:1fr; gap:14px;}
+    .aiat-strip{padding:22px 18px;}
+    .funding{overflow-x:auto; -webkit-overflow-scrolling:touch;}
+    .tax-banner{padding:24px 20px; gap:16px;}
+    .curriculum{overflow-x:hidden;}
   }
 
   /* ---------- CLASS CALENDAR ---------- */
@@ -482,9 +525,49 @@
   .cal-legend i{width:12px; height:12px; border-radius:3px; background:#fff7ec; border:1px solid var(--amber); display:inline-block;}
 
   @media (max-width:760px){
-    .cal-grid{font-size:0.6rem;}
-    .cal-grid td{height:62px; padding:4px;}
-    .cal-grid th{padding:6px 2px; font-size:0.65rem;}
+    .cal-title{padding:14px 14px; gap:10px;}
+    .cal-title h3{font-size:1.05rem;}
+    .cal-title .bar{max-width:72px; height:8px;}
+    .cal-grid{table-layout:fixed; width:100%;}
+    .cal-grid th{
+      font-size:0;
+      padding:8px 0;
+      overflow:hidden;
+    }
+    .cal-grid thead th:nth-child(1)::after{content:"จ"; font-size:0.72rem;}
+    .cal-grid thead th:nth-child(2)::after{content:"อ"; font-size:0.72rem;}
+    .cal-grid thead th:nth-child(3)::after{content:"พ"; font-size:0.72rem;}
+    .cal-grid thead th:nth-child(4)::after{content:"พฤ"; font-size:0.72rem;}
+    .cal-grid thead th:nth-child(5)::after{content:"ศ"; font-size:0.72rem;}
+    .cal-grid thead th:nth-child(6)::after{content:"ส"; font-size:0.72rem;}
+    .cal-grid thead th:nth-child(7)::after{content:"อา"; font-size:0.72rem;}
+    .cal-grid td{
+      height:auto;
+      min-height:64px;
+      padding:4px 3px;
+      font-size:0.58rem;
+      overflow:hidden;
+      word-break:break-word;
+    }
+    .cal-grid td .daynum{font-size:0.78rem; margin-bottom:2px;}
+    .cal-event{font-size:0; line-height:0; margin:0;}
+    .cal-event::after{
+      content:attr(data-short);
+      display:block;
+      font-size:0.58rem;
+      line-height:1.25;
+      font-weight:700;
+      color:var(--navy);
+    }
+    .cal-event-time{font-size:0; line-height:0;}
+    .cal-event-time::after{
+      content:attr(data-short);
+      display:block;
+      font-size:0.52rem;
+      line-height:1.2;
+      color:#5a5648;
+    }
+    .cal-legend{padding:12px 14px; font-size:0.75rem;}
   }
 </style>
 </head>
@@ -720,8 +803,8 @@
             <td><span class="daynum">19</span></td>
             <td><span class="daynum">20</span></td>
             <td><span class="daynum">21</span></td>
-            <td class="sat has-class"><span class="daynum">22</span><span class="cal-event">Core AI Foundation</span><span class="cal-event-time">13.00–16.00 (3hr.)</span></td>
-            <td class="sun has-class"><span class="daynum">23</span><span class="cal-event">Core AI Foundation</span><span class="cal-event-time">13.00–16.00 (3hr.)</span></td>
+            <td class="sat has-class"><span class="daynum">22</span><span class="cal-event" data-short="Core AI">Core AI Foundation</span><span class="cal-event-time" data-short="13–16">13.00–16.00 (3hr.)</span></td>
+            <td class="sun has-class"><span class="daynum">23</span><span class="cal-event" data-short="Core AI">Core AI Foundation</span><span class="cal-event-time" data-short="13–16">13.00–16.00 (3hr.)</span></td>
           </tr>
           <tr>
             <td><span class="daynum">24</span></td>
@@ -729,8 +812,8 @@
             <td><span class="daynum">26</span></td>
             <td><span class="daynum">27</span></td>
             <td><span class="daynum">28</span></td>
-            <td class="sat has-class"><span class="daynum">29</span><span class="cal-event">Core AI Foundation</span><span class="cal-event-time">13.00–16.00 (3hr.)</span></td>
-            <td class="sun has-class"><span class="daynum">30</span><span class="cal-event">Core AI Foundation</span><span class="cal-event-time">13.00–16.00 (3hr.)</span></td>
+            <td class="sat has-class"><span class="daynum">29</span><span class="cal-event" data-short="Core AI">Core AI Foundation</span><span class="cal-event-time" data-short="13–16">13.00–16.00 (3hr.)</span></td>
+            <td class="sun has-class"><span class="daynum">30</span><span class="cal-event" data-short="Core AI">Core AI Foundation</span><span class="cal-event-time" data-short="13–16">13.00–16.00 (3hr.)</span></td>
           </tr>
           <tr>
             <td><span class="daynum">31</span></td>
@@ -754,20 +837,20 @@
           <tr>
             <td class="muted"><span class="daynum">31</span></td>
             <td><span class="daynum">1</span></td>
-            <td class="has-class"><span class="daynum">2</span><span class="cal-event">Track-specific Lecture</span><span class="cal-event-time">18.00–21.00 (3hr.)</span></td>
-            <td class="has-class"><span class="daynum">3</span><span class="cal-event">Track-specific Lecture</span><span class="cal-event-time">18.00–21.00 (3hr.)</span></td>
+            <td class="has-class"><span class="daynum">2</span><span class="cal-event" data-short="Lecture">Track-specific Lecture</span><span class="cal-event-time" data-short="18–21">18.00–21.00 (3hr.)</span></td>
+            <td class="has-class"><span class="daynum">3</span><span class="cal-event" data-short="Lecture">Track-specific Lecture</span><span class="cal-event-time" data-short="18–21">18.00–21.00 (3hr.)</span></td>
             <td><span class="daynum">4</span></td>
-            <td class="sat has-class"><span class="daynum">5</span><span class="cal-event">Track-specific Guided lab</span><span class="cal-event-time">13.00–17.00 (4hr.)</span></td>
-            <td class="sun has-class"><span class="daynum">6</span><span class="cal-event">Track-specific Guided lab</span><span class="cal-event-time">13.00–17.00 (4hr.)</span></td>
+            <td class="sat has-class"><span class="daynum">5</span><span class="cal-event" data-short="Lab">Track-specific Guided lab</span><span class="cal-event-time" data-short="13–17">13.00–17.00 (4hr.)</span></td>
+            <td class="sun has-class"><span class="daynum">6</span><span class="cal-event" data-short="Lab">Track-specific Guided lab</span><span class="cal-event-time" data-short="13–17">13.00–17.00 (4hr.)</span></td>
           </tr>
           <tr>
             <td><span class="daynum">7</span></td>
             <td><span class="daynum">8</span></td>
-            <td class="has-class"><span class="daynum">9</span><span class="cal-event">Track-specific Lecture</span><span class="cal-event-time">18.00–21.00 (3hr.)</span></td>
-            <td class="has-class"><span class="daynum">10</span><span class="cal-event">Track-specific Lecture</span><span class="cal-event-time">18.00–21.00 (3hr.)</span></td>
+            <td class="has-class"><span class="daynum">9</span><span class="cal-event" data-short="Lecture">Track-specific Lecture</span><span class="cal-event-time" data-short="18–21">18.00–21.00 (3hr.)</span></td>
+            <td class="has-class"><span class="daynum">10</span><span class="cal-event" data-short="Lecture">Track-specific Lecture</span><span class="cal-event-time" data-short="18–21">18.00–21.00 (3hr.)</span></td>
             <td><span class="daynum">11</span></td>
-            <td class="sat has-class"><span class="daynum">12</span><span class="cal-event">Track-specific Guided lab</span><span class="cal-event-time">13.00–17.00 (4hr.)</span></td>
-            <td class="sun has-class"><span class="daynum">13</span><span class="cal-event">Track-specific Guided lab</span><span class="cal-event-time">13.00–17.00 (4hr.)</span></td>
+            <td class="sat has-class"><span class="daynum">12</span><span class="cal-event" data-short="Lab">Track-specific Guided lab</span><span class="cal-event-time" data-short="13–17">13.00–17.00 (4hr.)</span></td>
+            <td class="sun has-class"><span class="daynum">13</span><span class="cal-event" data-short="Lab">Track-specific Guided lab</span><span class="cal-event-time" data-short="13–17">13.00–17.00 (4hr.)</span></td>
           </tr>
           <tr>
             <td><span class="daynum">14</span></td>
@@ -775,8 +858,8 @@
             <td><span class="daynum">16</span></td>
             <td><span class="daynum">17</span></td>
             <td><span class="daynum">18</span></td>
-            <td class="sat has-class"><span class="daynum">19</span><span class="cal-event">Track-specific mini Workshop</span><span class="cal-event-time">09.00–12.00 (3hr.)</span></td>
-            <td class="sun has-class"><span class="daynum">20</span><span class="cal-event">Track-specific mini Workshop</span><span class="cal-event-time">09.00–12.00 (3hr.)</span></td>
+            <td class="sat has-class"><span class="daynum">19</span><span class="cal-event" data-short="WS">Track-specific mini Workshop</span><span class="cal-event-time" data-short="09–12">09.00–12.00 (3hr.)</span></td>
+            <td class="sun has-class"><span class="daynum">20</span><span class="cal-event" data-short="WS">Track-specific mini Workshop</span><span class="cal-event-time" data-short="09–12">09.00–12.00 (3hr.)</span></td>
           </tr>
           <tr>
             <td><span class="daynum">21</span></td>
